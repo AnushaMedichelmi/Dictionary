@@ -5,54 +5,56 @@ using UnityEngine;
 public class ItemDB : MonoBehaviour
 {
 
-    public List<Item> itemsList = new List<Item>(); 
-   public Dictionary<int, Item> itemsDictionary = new Dictionary<int,Item>();
+    public List<Item> itemsList = new List<Item>();
+    public Dictionary<int, Item> itemDictionary = new Dictionary<int, Item>();
     // Start is called before the first frame update
     void Start()
     {
-        Item MyKnife=new Item();
-        MyKnife.Name = "Dictionary";
-       MyKnife.Id = 0;
-        
+        Item MySword = new Item();
+        MySword.name = "Knife";
+        MySword.id = 0;
         Item MyBullet = new Item();
-        MyBullet.Name = "Bullet";
-        MyBullet.Id = 1;
-
+        MyBullet.name = "Bullet";
+        MyBullet.id = 1;
         Item MyCar = new Item();
-        MyCar.Name = "Hyundai";
-        MyCar.Id = 2;
+        MyBullet.name = "Car";
+        MyBullet.id = 2;
 
-        itemsDictionary.Add(0, MyKnife);
-        itemsDictionary.Add(1, MyBullet);
-        itemsDictionary.Add(2, MyCar);
+        itemDictionary.Add(0, MySword);
+        itemDictionary.Add(1, MyBullet);
+        itemDictionary.Add(2, MyCar);
 
-       /* foreach(KeyValuePair<int, Item> item in itemsDictionary)
+        /*
+        foreach (Item item in itemDictionary.Values)
         {
-            Debug.Log(item.Key);
-            Debug.Log(item.Value);
+            Debug.Log("Name :" + item.name);
         }*/
 
-      /*  foreach(Item item in itemsDictionary.Values)
-        {
-            Debug.Log(item.Name);
-        }*/
 
-        itemsList.Add(MyKnife);
+
+
+
+        itemsList.Add(MySword);
         itemsList.Add(MyBullet);
         itemsList.Add(MyCar);
-
-        foreach(Item item in itemsList)
+        /*
+        foreach (var item in itemsList)
         {
-            Debug.Log(item.Name);
-            Debug.Log(item.Id); 
-        }
+            Debug.Log(item.name);
+            Debug.Log(item.id);
+        }*/
+        var myDictionaryItem = itemDictionary[0];
 
-        var myDictionaryItem= itemsDictionary[0];
+        Debug.Log(myDictionaryItem.name);
+
+
+
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
